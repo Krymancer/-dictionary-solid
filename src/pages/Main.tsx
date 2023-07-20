@@ -25,7 +25,7 @@ const Main = () => {
   handleWord("keyboard");
 
   return (
-    <main role="main" class="bg-white dark:bg-gray-900 text-gray-600 dark:text-white flex justify-center p-10 transition-all min-h-screen">
+    <main class="bg-white dark:bg-gray-900 text-gray-600 dark:text-white flex justify-center p-10 transition-all min-h-screen">
       <div class="flex w-1/2 flex-col">
         <Header />
         <SearchBar word={word} setWord={handleWord} />
