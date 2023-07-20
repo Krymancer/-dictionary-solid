@@ -8,7 +8,7 @@ const Header = () => {
     <header class="flex flex-row justify-between w-full items-center">
       <Logo />
       <div class="flex gap-4 items-center h-full">
-        <FontSelector fonts={[]} selectedFont='font' onSelect={() => {}}/>
+        <FontSelector />
         <Separator orientation="vertical" />
         <ThemeToggle />
       </div>
