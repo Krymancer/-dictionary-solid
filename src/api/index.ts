@@ -30,7 +30,7 @@ interface APIResponse {
   sourceUrls: string[]
 }
 
-type Word = {
+export type WordType = {
   word: string;
   phonetic: string;
   audio?: string;
@@ -45,15 +45,30 @@ type Word = {
   source: string,
 };
 
-export const getWord = async (word: string) => {
+type WordResponseType = {
+  data: WordType,
+  sucess: boolean,
+};
+
+export const getWord = async (word: string) : Promise<WordResponseType> => {
+  word = word.trim().toLowerCase();
+
   const response = await fetch(`${baseUrl}${word}`);
-  const data : APIResponse = await response.json();
+
+  if (!response.ok) {
+    return {
+      data: {} as WordType,
+      sucess: false
+    }
+  }
+
+  const [data] : APIResponse[] = await response.json();
 
   const [audio] = data.phonetics.map(phonetic => {
     if (phonetic.audio) return phonetic.audio;
   });
 
-  const wordData : Word = {
+  const wordData : WordType = {
     word: data.word,
     phonetic: data.phonetic,
     audio: audio,
@@ -67,7 +82,11 @@ export const getWord = async (word: string) => {
     })),
     source: data.sourceUrls[0],
   };
+  
+  return {
+    data: wordData,
+    sucess: true,
+  };
 
-
-  return data;
+  
 }

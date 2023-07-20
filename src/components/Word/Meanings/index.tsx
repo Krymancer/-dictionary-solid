@@ -1,21 +1,15 @@
-import { For } from "solid-js";
+import { Accessor, For } from "solid-js";
 import Definition from "./Definition";
 import Synonyms from "../Synonyms";
+import type { WordType } from "../../../api";
 
 interface MeaningsProps {
-  meanings: {
-    partOfSpeech: string,
-    definitions: {
-      definition: string,
-      example?: string,
-    }[],
-    synonyms: string[],
-  }[],
+  data: Accessor<WordType>;
 }
 
-const Meanings = ({meanings}: MeaningsProps) => {
+const Meanings = ({data}: MeaningsProps) => {
   return(
-    <For each={meanings} fallback={null}>
+    <For each={data().meanings} fallback={null}>
       {(meaning, index) => (
             <div>
             <div class="flex items-center gap-4 mt-10">

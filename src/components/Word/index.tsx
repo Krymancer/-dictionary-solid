@@ -1,39 +1,32 @@
+import { Accessor } from "solid-js";
 import PlayButton from "../PlayButton";
 import Meanings from "./Meanings";
 import Source from "./Source";
+import Error from '../Error';
+
+import type { WordType } from "../../api";
 
 interface WordProps {
-  word: string;
-  phonetic: string;
-  audio?: string;
-  meanings: {
-    partOfSpeech: string,
-    definitions: {
-      definition: string,
-      example?: string,
-    }[],
-    synonyms: string[],
-  }[],
-  source: string,
+  data: Accessor<WordType>;
 }
 
-const Word = ({word, phonetic, audio, meanings, source} : WordProps) => {
-return (
-    <div id="word" class="mt-11">
-    <div class="flex justify-between">
-      <div>
-        <h1 class="text-2xl font-bold">{word}</h1>
-        <span class="text-purple">{phonetic}</span>
+const Word = ({ data } : WordProps) => {
+  return (
+      <div id="word" class="mt-11">
+      <div class="flex justify-between">
+        <div>
+          <h1 class="text-2xl font-bold">{data().word}</h1>
+          <span class="text-purple">{data().phonetic}</span>
+        </div>
+
+        <PlayButton data={data} />
       </div>
 
-      <PlayButton audio={audio} />
+      <Meanings data={data} />
+
+      <Source data={data} />
     </div>
-
-    <Meanings meanings={meanings} />
-
-    <Source source={source} />
-  </div>
-  );
+    );
 };
 
 export default Word;
