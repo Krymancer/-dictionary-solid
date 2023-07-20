@@ -12,6 +12,8 @@ const SearchBar = ({word, setWord}: SearhBarProps) => {
           <Match when={word() === ''}>
             <div class="outline-none outline-red border-1 mt-14 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-2xl h-16 p-4 focus-within:outline-none focus-within:outline-purple cursor:pointer ">
               <input
+                id="search-input"
+                name="search-input"
                 onchange={(e) => setWord(e.target.value)}
                 value={word()}
                 type="text"
