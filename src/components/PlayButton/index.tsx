@@ -13,8 +13,8 @@ const PlayButton = ({data}: PlayButtonProps) => {
   }
 
   return (
-    <div class="rounded-full bg-purple/25 w-20 h-20 flex items-center justify-center cursor-pointer text-purple hover:bg-purple hover:text-white transition-all">
-      <svg class="ml-1" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" onclick={play}>
+    <div class="rounded-full bg-purple/25 w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center cursor-pointer text-purple hover:bg-purple hover:text-white transition-all">
+      <svg class="ml-1 w-3 h-3 sm:w-5 sm:h-5" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" onclick={play}>
         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V21L21 10.5L0 0Z" fill="currentColor"/>
       </svg>
       <audio id="audio" src={data().audio} ref={audio}></audio>

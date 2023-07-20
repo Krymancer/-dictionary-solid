@@ -26,7 +26,7 @@ const Main = () => {
 
   return (
     <main class="bg-white dark:bg-gray-900 text-gray-600 dark:text-white flex justify-center p-10 transition-all min-h-screen">
-      <div class="flex w-1/2 flex-col">
+      <div class="flex flex-col w-full lg:w-1/2">
         <Header />
         <SearchBar word={word} setWord={handleWord} />
         <Switch fallback={null}>

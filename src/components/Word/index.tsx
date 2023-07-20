@@ -15,7 +15,7 @@ const Word = ({ data } : WordProps) => {
       <div id="word" class="mt-11">
       <div class="flex justify-between">
         <div>
-          <h1 class="text-2xl font-bold">{data().word}</h1>
+          <h1 class="text-1xl font-bold sm:text-2xl">{data().word}</h1>
           <span class="text-purple">{data().phonetic}</span>
         </div>
 
