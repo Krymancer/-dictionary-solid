@@ -31,10 +31,13 @@ Users should be able to:
 
 ### Screenshot
 
-![FullHD](./screenshot.jpg)
-![HD](./screenshot.jpg)
-![Tablet](./screenshot.jpg)
-![Mobile](./screenshot.jpg)
+![FullHD](https://raw.githubusercontent.com/Krymancer/dictionary-solid/main/.github/fullhd.png)
+
+![HD](https://raw.githubusercontent.com/Krymancer/dictionary-solid/main/.github/hd.png)
+
+![Tablet](https://raw.githubusercontent.com/Krymancer/dictionary-solid/main/.github/tablet.png)
+
+![Mobile](https://raw.githubusercontent.com/Krymancer/dictionary-solid/main/.github/mobile.png)
 
 ### Links
 
